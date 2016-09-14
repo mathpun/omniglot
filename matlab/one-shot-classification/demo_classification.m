@@ -58,6 +58,12 @@ function d = normalize(d)
     d2 = d(:,2);
     d(:,1) = d(:,1) - mean(d1);
     d(:,2) = d(:,2) - mean(d2);
+    rg = max(range(d1),range(d2));
+    d(:,1) = d(:,1) ./ rg;
+    d(:,2) = d(:,2) ./ rg;
+
+[12:41]  
+
 end
 
 function mhd = ModHausdorffDist(A,B)
